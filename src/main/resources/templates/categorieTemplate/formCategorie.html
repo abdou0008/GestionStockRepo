@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template1"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Page FormCategorie</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/app.css}">
+</head>
+<body>
+<div layout:fragment="content1">
+    <div class="col-md-6 offset-3">
+        <form method="post" th:action="@{/admin/save}">
+            <div>
+                <label for="codeCategorie">Code</label>
+                <input id="codeCategorie" class="form-control" type="text" name="codeCategorie" th:value="${categorie.codeCategorie}">
+                <span class="text-danger" th:errors="${categorie.codeCategorie}"></span>
+            </div>
+            <div>
+                <label for="libelleCategorie">Libelle</label>
+                <input id="libelleCategorie" class="form-control" type="text" name="libelleCategorie" th:value="${categorie.libelleCategorie}">
+                <span class="text-danger" th:errors="${categorie.libelleCategorie}"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">save</button>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

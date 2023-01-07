@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PageAjoutArticle</title>
+</head>
+<body>
+<h1>Ici, la page de vente !</h1>
+
+
+<form th:action="@{/ajouterVent}" method="post" th:object="${vente}">
+    <h2>Ajouter un article</h2>
+    <label for="ref">Reference</label>
+    <input name="ref" id="ref" type="text" placeholder="Entrer une refence" th:field="*{codeVente}">
+    <br>
+    <label for="lib">Libellé</label>
+    <input name="lib" id="lib" type="text" placeholder="Entrer un libellé" th:field="*{libelle}">
+    <br>
+    <label for="pu">Prix Unitaire</label>
+    <input name="pu" id="pu" type="number" placeholder="Entrer un prix unitaire" th:field="*{prixUnitVente}">
+    <br>
+    <label for="nbv">nombre de vente</label>
+    <input name="nbv" id="nbv" type="number" placeholder="Entrer un nombre de vente" th:field="*{nbreVente}">
+    <br>
+
+    <input type="submit" value="Envoyer">
+</form>
+
+</body>
+</html>

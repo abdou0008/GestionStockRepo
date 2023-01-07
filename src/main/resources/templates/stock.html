@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock</title>
+</head>
+<body>
+<h1>Ici, la page de stock !</h1>
+
+
+<form th:action="@{/ajouterStock}" method="post" th:object="${stock}">
+    <h2>Ajouter un article</h2>
+    <label for="lib">Libelle</label>
+    <input name="lib" id="lib" type="text" placeholder="Entrer un libellé" th:field="*{libelle}">
+    <br>
+    <label for="qtt">Quantite</label>
+    <input name="qtt" id="qtt" th:type="" placeholder="Entrer un prix" th:field="*{price}">
+
+    <input type="submit" value="Envoyer">
+</form>
+
+</body>
+</html>
